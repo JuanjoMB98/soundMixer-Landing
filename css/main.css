@@ -380,7 +380,7 @@ li:not(:last-child) {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 32rem;
+    gap: 16rem;
 }
 
 .a-discordLink{
@@ -456,7 +456,7 @@ li:not(:last-child) {
     .m-welcomeImageContainer{
         display: none;
     }
-    
+    .m-joinButtonContainer,
     .m-roadmapItem,
     .m-heroSection__info{
         flex-direction: column;
