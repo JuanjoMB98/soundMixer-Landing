@@ -1,0 +1,493 @@
+:root {
+    --mainColor: #00F908;
+    --mainBackground: #FCF9F4;
+}
+
+html {
+    font-size: 1px;
+    background-color: #121617;
+    scroll-behavior: smooth;
+    scroll-padding-top: 120rem ;
+}
+
+:where(*) {
+    position: relative;
+    box-sizing: border-box;
+    margin: 0;
+    font-family: "Inter";
+}
+:where(img){
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+body {
+    font-size: 16rem;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+a {
+    text-decoration: none;
+}
+
+h2{
+    font-weight: 700;
+    font-size: clamp(24rem, 3vw, 48rem);
+    text-align: center;
+    color: #fff;
+}
+h3 strong,
+h2 strong{
+    color: var(--mainColor);
+}
+
+h3{
+    font-weight: 700;
+    font-size: clamp(16rem, 3vw, 32rem);
+    color: #fff;
+}
+h3 strong{
+    font-weight: 400;
+}
+
+p,li{
+    color: #fff;
+    opacity: 0.5;
+    font-size: 20rem;
+    max-width: 750rem;
+}
+
+
+.a-button{
+    padding: 16px 24px;
+    border-radius: 4px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(14rem, 3vw, 18rem);
+}
+.a-button.-primary{
+    background-color: var(--mainColor);
+    color: white;
+}
+
+/* || HEADER  ----------------------------------------------------------------*/
+.o-mainHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+
+    padding: 25rem 64rem;
+    z-index:3;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(6.85px);
+}
+
+/* |> LEFT SIDE ---------------------------------------------------------------*/
+.m-headerLogo__container{
+    display: flex;
+    flex-direction: row;
+    gap: 16rem;
+    align-items: center;
+    justify-content: center;
+}
+.m-headerLogoContainer__img{
+    display: flex;
+    width: 64rem;
+}
+.m-headerLogoContainer__name{
+    font-weight: 700;
+    font-size: 24rem;
+    color: #FFFFFF;
+}
+
+/* |> RIGHT SIDE -------------------------------------------------------------*/
+.m-headerLink__container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 32rem;
+
+    list-style: none;
+}
+.a-headerLink__text{
+    
+    font-weight: 400;
+    font-size: 16rem;
+    color: var(--mainColor);
+}
+.m-headerLink__item {
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 1 !important;
+}
+.m-headerLink__item:last-child .a-headerLink__text{
+    color: var(--mainBackground);
+}
+
+.m-headerButton {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    width: 32rem;
+    height: 32rem;
+    gap: 4rem;
+    z-index: 999;
+    cursor: pointer;
+}
+
+.o-heroSection{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    height: calc(100vh);
+}
+.m-heroSection__info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding-top: 164rem;
+    gap: 24rem;
+}
+.a-heroTitle{
+    
+    font-size: clamp(32rem, 5vw, 90rem);
+    text-align: center;
+    color: #fff;
+    margin: 0;
+    font-weight: 700;
+    color: #FFFFFF;
+
+}
+.m-heroSection__image{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+.m-heroSection__image img{
+    object-fit: cover;
+    object-position: 70% 0%;
+}
+/* || SECTION ----------------------------------------------------------------*/
+.o-sectionContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 64px;
+}
+.o-sectionContainer :is(p,li,h2,h3,a){
+    animation: linear opacity;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+@keyframes opacity {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 0.5;
+    }
+}
+.o-sectionContainer :is(p,li,h2,h3,a, .m-roadmapItem__step__circle){
+    animation: linear size;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+@keyframes size {
+    from {
+        scale: 0.5;
+    }
+
+    to {
+        scale: 1;
+    }
+}
+
+/* |> WELCOME SECTION '-------------------------------------------------------*/
+.o-welcomeSection{
+    padding: 72rem 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 120rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.m-welcomeImageContainer.-ipad img{
+    right: 0;
+    transform: rotate(-10deg) translateY(-50dvh) translateX(110dvh);
+}
+.m-welcomeImageContainer.-iphone img{
+    left: 0;
+    transform: rotate(8deg) translateY(-50dvh) translateX(-50dvh);
+}
+
+.m-welcomeTextContainer{
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32rem;
+}
+.m-welcomeImageContainer{
+    flex: 1 1;
+    height: 700rem;
+    overflow: visible;
+}
+
+.o-welcomeSection img{
+    position: absolute;
+    height: 800rem;
+    width: auto;
+    transition: all 0.8s cubic-bezier(0.075, 0.82, 0.165, 1);
+    z-index: 5;
+}
+.m-welcomeTextContainer p{
+    text-align: center;
+}
+
+
+
+/* |> INFO SECTION -----------------------------------------------------------*/
+.o-roadmapSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 124rem;
+    margin-bottom: 164rem;
+    counter-set: list;
+}
+.m-roadmapContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.m-roadmapItem{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 32rem;
+    counter-increment: list;
+}
+
+.m-roadmapItem__step{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    width: 200px;
+    padding: 32rem 0;
+}
+.m-roadmapItem__step__circle{
+    font-size: 32rem;
+    font-weight: 700;
+    color: #fff;
+    border: 1px solid #fff;
+    --size: 140px;
+    width: var(--size);
+    height: var(--size);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color:#131718 ;
+    text-align: center;
+    text-wrap: wrap;
+    text-wrap-style: balance;
+    padding: 16rem;
+    font-size: 24rem;
+}
+.m-roadmapItem__step__line{
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background-color: #fff;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: -1;
+}
+
+.m-roadmapItem__step.-current .m-roadmapItem__step__circle{
+    --size: 180px;
+    background-color: #003902;
+    border-color: var(--mainColor);
+}
+.m-roadmapItem__step.-current .m-roadmapItem__step__line{
+    --size: 180px;
+    background: linear-gradient(0deg, #ffffff 0%, #00F908 100%);
+}
+
+
+.o-roadmapSection p,li{
+    color: #fff;
+    opacity: 0.5;
+    font-size: 16rem;
+    max-width: 750rem;
+}
+li:not(:last-child) { 
+    margin-bottom: 8px;  
+ }
+
+
+/* |> WELCOME SECTION '-------------------------------------------------------*/
+.o-joinSection{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 700rem;
+    padding-left: 15dvw;
+}
+.m-joinTextContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32rem;
+}
+
+.m-joinImageContainer{
+    position: absolute;
+    right: -20dvw;
+}
+.m-joinImageContainer img{
+    width: auto;
+    transform: rotate(11deg);
+}
+
+.m-joinButtonContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 32rem;
+}
+
+.a-discordLink{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 16rem;
+    padding: 16rem 32rem;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #1E2021;
+}
+.a-discordLink img{
+    max-width: 32rem;
+}
+
+
+/* || FOOTER -----------------------------------------------------------------*/
+.o-mainFooter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    padding: 16rem 0;
+    background: linear-gradient(109.34deg, #032527 3.65%, #171717 96.35%);
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 16px 16px 0px 0px;
+    z-index: 0;
+    width: 70%;
+    margin: 164rem auto 0 auto;
+
+}
+.a-mainFooter__text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+
+    color: #fff;
+    opacity: 0.5;
+}
+.m-responseiveImage{
+    display: none;
+}
+
+#ff-compose div{
+    width: 100%;
+}
+
+@media (max-width: 720px) {
+    html {
+        scroll-padding-top: 0rem ;
+    }
+    /* || NAVEGADOR RESPONSIVE -----------------------------------------------*/
+    .o-mainHeader{
+        display: none;
+    }
+    .o-joinSection,
+    .o-roadmapSection,
+    .o-welcomeSection {
+        padding: 32rem 24rem;
+        gap: 32rem;
+        margin: 0;
+    }
+    .o-welcomeSection span {
+        font-size: 16rem;
+    }
+    .m-roadmapItem__step__line,
+    .m-welcomeImageContainer{
+        display: none;
+    }
+    
+    .m-roadmapItem,
+    .m-heroSection__info{
+        flex-direction: column;
+    }
+    .o-joinSection{
+        height: auto;
+        flex-direction: column-reverse;
+    }
+    .m-roadmapItem__step__circle{
+        --size: 100px !important;
+    }
+    .m-roadmapItem{
+        gap: 8rem;
+    }
+    .m-roadmapContainer{
+        gap: 32rem ;
+    }
+    .m-responseiveImage{
+        display: flex;
+        position: absolute;
+        bottom: 0;
+    }
+    
+
+    .m-joinImageContainer{
+        position: relative;
+        max-width: 100%;
+        right: inherit;
+    }
+    .m-joinImageContainer img { 
+        width: 100%;
+    }
+
+}
